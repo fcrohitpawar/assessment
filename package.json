@@ -1,0 +1,24 @@
+{
+  "name": "assessment",
+  "version": "1.0.0",
+  "description": "sample project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Rohit Pawar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cryptr": "^6.0.3",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "swagger-jsdoc": "^6.2.0",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

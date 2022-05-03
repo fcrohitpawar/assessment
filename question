@@ -1,0 +1,43 @@
+Create APIs for following operations in NodeJS. You can use any framework in NodeJS hapi, express, etc.
+
+1.     Create an Admin account, User account  ( Done )
+
+2.     There will be only one Admin. ( Done )
+
+3.     The user can Sign up or Sign In. ( Done )
+
+4.     The website will display products added by users. ( Done )
+
+5.     Admin can do delete/update operations on Users. ( Done )
+ 
+6.     Admin can decide whether products can be displayed on a web page or not and also can do delete/update operations on products.
+
+Databases: 
+
+o    User data
+
+o    Product data Kon dily
+
+TO START ASSESSMENT  PROJECT 
+
+
+STEP : 1 
+
+	Run the below command to start 
+	- npm start
+
+Swagger ui path : 
+	
+	http://localhost:8080/api-docs/
+
+STEP : 2 
+
+	step after successfully login user get token and add in  Available authorizations
+
+	Ex. Bearer <token>
+	EX  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTE1MTM5MTksImV4cCI6MTY1MTUxNzUxOX0.CpPP1L4njn2fAIJ-9BBrxWAurBIa6AfCem6-4Bqu1A4
+
+
+
+
+
