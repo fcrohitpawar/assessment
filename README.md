@@ -32,7 +32,7 @@ Step 1 : Database Setup mysql
 	 CONSTRAINT fk_user FOREIGN KEY (userId) REFERENCES users(ID) ON DELETE CASCADE
 	) ENGINE = InnoDB;
 
-step 2 : update below db connection details 
+Step 2 : update below db connection details 
         /config/db.config.js
 	
 	    port:3306,
@@ -46,12 +46,12 @@ Step 3 : Run on cmd : npm start
 
 Step 4 : Run on cmd : npm start
 
-step 5 : check on below url 
+Step 5 : check on below url 
 	
        http://localhost:8080/api-docs/
 
-step 6 : create one admin user / role ( When create use role as - admin/user )
-step 7 : login user once login it will return token in login API response get that token and click on Authorize button put token as a value and click on Authorize button and then you can access all api 
+Step 6 : create one admin user / role ( When create use role as - admin/user )
+Step 7 : login user once login it will return token in login API response get that token and click on Authorize button put token as a value and click on Authorize button and then you can access all api 
 
 
 
