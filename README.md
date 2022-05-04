@@ -17,7 +17,7 @@ Step 1 : Database Setup mysql
 
 	CREATE TABLE `users` ( 
 	 `id` INT NOT NULL AUTO_INCREMENT ,
-	 `userName` VARCHAR(60) NOT NULL , 
+	 `userName` VARCHAR(60) NOT NULL UNIQUE, 
 	 `password` VARCHAR(60) NOT NULL ,
 	 `role` VARCHAR(60) NOT NULL,
 	  PRIMARY KEY (`id`)
@@ -27,7 +27,7 @@ Step 1 : Database Setup mysql
 	 `id` INT NOT NULL AUTO_INCREMENT ,
 	 `userId` INT NOT NULL ,
 	 `productName` VARCHAR(50) NOT NULL,
-	 `active` tinyint(1) DEFAULT 1;
+	 `active` tinyint(1) DEFAULT 1,
 	 PRIMARY KEY (`id`),
 	 CONSTRAINT fk_user FOREIGN KEY (userId) REFERENCES users(ID) ON DELETE CASCADE
 	) ENGINE = InnoDB;
