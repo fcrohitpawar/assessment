@@ -92,7 +92,7 @@ router.post("/login", usersController.login);
  *              description: Bad request
  */
 
- router.get("/getProductList", usersController.getProductList);
+ router.get("/getProductList", Authentication.ensureRole(['admin','user']), usersController.getProductList);
  /**
   * @swagger
   * /users/getProductList:
@@ -117,7 +117,7 @@ router.post("/login", usersController.login);
   *              description: Bad request
   */
 
-  router.post("/createProduct", usersController.createProduct);
+  router.post("/createProduct", Authentication.ensureRole(['admin','user']), usersController.createProduct);
   /**
    * @swagger
    * /users/createProduct:
@@ -154,7 +154,7 @@ router.post("/login", usersController.login);
    *              description: Bad request
    */
 
-   router.put("/updateProduct", Authentication.ensureRole('admin'), usersController.updateProduct);
+   router.put("/updateProduct", Authentication.ensureRole(['admin']), usersController.updateProduct);
    /**
     * @swagger
     * /users/updateProduct:
@@ -191,7 +191,7 @@ router.post("/login", usersController.login);
     *              description: Bad request
     */
  
-    router.put("/disableEnableProduct", Authentication.ensureRole('admin'), usersController.disableEnableProduct);
+    router.put("/disableEnableProduct", Authentication.ensureRole(['admin']), usersController.disableEnableProduct);
     /**
      * @swagger
      * /users/disableEnableProduct:
@@ -229,7 +229,7 @@ router.post("/login", usersController.login);
      */
  
     
-   router.post("/deleteProduct", Authentication.ensureRole('admin'), usersController.deleteProduct);
+   router.post("/deleteProduct", Authentication.ensureRole(['admin']), usersController.deleteProduct);
    /**
     * @swagger
     * /users/deleteProduct:

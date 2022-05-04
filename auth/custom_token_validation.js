@@ -12,11 +12,11 @@ class Authentication{
                 if(token){
                     const decryptedString = cryptr.decrypt(token);
                     const user_data = decryptedString.split("@__@");
-                    console.log(`User token url : ${user_data[2]}`)
-                    console.log(`permission : ${role}`)
-                    if(user_data[2] != role){
-                        return res.status(500).send({ success: 0, data: "Access denied! unauthorized user" });    
+                    const isCheck = role.indexOf(user_data[2]);
+                    if(isCheck == -1){
+                        return res.status(500).send({ success: 0, data: `Access denied! unauthorized user` });    
                     }
+                    
                     var data = {
                         password:user_data[0],
                         userName:user_data[1],
@@ -25,21 +25,22 @@ class Authentication{
                     const checkuser = usersController.checkUser(data, (error, results) => {
                         if (error) {
                           console.log(error);
-                            return res.status(400).send({ success: 0, data: "Bad requests" });
+                            return res.status(400).send({ success: 0, data: "unauthorized user" });
                         }
                         return results;
                     });
-                    
+                    console.log(checkuser);
                     return next();
                 }else{
-                    return res.status(500).send({ success: 0, data: "Access denied! unauthorized user 1 " });
+                    return res.status(400).send({ success: 0, data: "Access denied! unauthorized user" });
                 }
             } catch (error) {
                 console.log(error)
-                return res.status(500).send({ success: 0, data: "Access denied! unauthorized user 2" });
+                return res.status(400).send({ success: 0, data: "Access denied! unauthorized user" });
             }
         };
     }
 }
+
 
 module.exports = Authentication;
